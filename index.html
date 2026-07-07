@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Sachin Sahu — Data Engineer </title>
+<title>Sachin Sahu — Data Engineer</title>
 <meta name="description" content="Data engineer building multi-country data pipelines, cloud warehouses, and analytics systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +68,30 @@
     }
   }
 
+  /* ---------- certifications ---------- */
+  .cert-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .cert-head h2{margin-bottom:0}
+  .verified-pill{font-family:var(--mono);font-size:.72rem;background:rgba(14,124,123,.1);color:var(--teal-dark);border:1px solid rgba(14,124,123,.3);padding:4px 12px;border-radius:99px}
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;position:relative}
+  .cert-card.flagship{border:2px solid var(--teal)}
+  .flag-badge{position:absolute;top:-11px;left:16px;background:var(--teal);color:#fff;font-family:var(--mono);font-size:.66rem;padding:3px 11px;border-radius:99px;letter-spacing:.03em}
+  .cert-provider{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);letter-spacing:.05em;margin-bottom:8px}
+  .cert-card h3{font-size:1.02rem;font-weight:600;margin-bottom:5px}
+  .cert-card p{font-size:.86rem;color:var(--ink-soft);margin-bottom:14px}
+  .cert-link{font-family:var(--mono);font-size:.78rem}
+  .cert-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .chip{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);background:var(--card);color:var(--ink-soft);padding:5px 13px;border-radius:99px}
+  .chip:hover{border-color:var(--teal);color:var(--teal-dark);text-decoration:none}
+
+  /* ---------- recommendations ---------- */
+  .quote{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:16px}
+  .quote p{font-size:.95rem;color:var(--ink-soft);font-style:italic;margin-bottom:10px}
+  .quote .who{font-family:var(--mono);font-size:.75rem;color:var(--ink);font-style:normal}
+
+  /* ---------- hero buttons ---------- */
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+
   /* ---------- sections ---------- */
   section{padding:56px 0;border-top:1px solid var(--line)}
   .sec-label{font-family:var(--mono);font-size:.82rem;color:var(--ink-soft);margin-bottom:8px}
@@ -129,6 +153,8 @@
       <a href="#projects">projects</a>
       <a href="#certifications">certs</a>
       <a href="#contact">contact</a>
+      <a href="https://github.com/sachsahu21" target="_blank" rel="noopener">github ↗</a>
+      <a href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">resume ↗</a>
     </div>
   </div>
 </nav>
@@ -137,11 +163,15 @@
   <p class="kicker">// data &amp; cloud engineer · singapore</p>
   <h1>I build pipelines that move data <span class="accent">across countries</span>, reliably.</h1>
   <p class="lede">
-    Data engineer with hands-on experience designing multi-country ETL pipelines,
-    cloud data warehouses, and analytics-ready datasets. I work at the intersection of
-    SQL, Python, and cloud platforms — turning messy, inconsistent source data into
-    clean, trusted tables that teams actually use.
+    Certified data architect and engineer with extensive experience in Google Cloud
+    and multi-country data platforms. Currently at Artefact, Singapore — designing
+    ETL pipelines, cloud data warehouses, and analytics-ready datasets that turn messy,
+    inconsistent source data into clean, trusted tables teams actually use.
   </p>
+  <div class="hero-cta">
+    <a class="btn primary" href="https://github.com/sachsahu21" target="_blank" rel="noopener">View my GitHub →</a>
+    <a class="btn ghost" href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Resume</a>
+  </div>
   <div class="hero-meta">
     <span>MaxCompute / ODPS</span>
     <span>Python · pandas</span>
@@ -190,6 +220,40 @@
     </svg>
   </div>
 </header>
+
+<section id="certifications" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> certifications</p>
+  <div class="cert-head">
+    <h2>Certified across 3 clouds</h2>
+    <span class="verified-pill">✓ verified on Credly</span>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card flagship">
+      <span class="flag-badge">FLAGSHIP</span>
+      <p class="cert-provider">GOOGLE CLOUD</p>
+      <h3>Professional Cloud Architect</h3>
+      <p>Design of secure, scalable, highly available GCP solutions</p>
+      <a class="cert-link" href="https://www.credly.com/badges/8a8964a8-27d8-4fca-ab14-d808a86b846b/public_url" target="_blank" rel="noopener">Verify badge ↗</a>
+    </div>
+    <div class="cert-card">
+      <p class="cert-provider">MICROSOFT AZURE</p>
+      <h3>Azure certified</h3>
+      <p>Verified achievements on Credly</p>
+      <a class="cert-link" href="https://www.credly.com/users/sachinsahu/badges" target="_blank" rel="noopener">View badges ↗</a>
+    </div>
+    <div class="cert-card">
+      <p class="cert-provider">ALIBABA CLOUD</p>
+      <h3>Alibaba Cloud certified</h3>
+      <p>The platform I run in production daily</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1Qd9R6V9ZbJsKOMR4IzQwNoWz2TIFNaYp/view" target="_blank" rel="noopener">View certificate ↗</a>
+    </div>
+  </div>
+  <div class="cert-chips">
+    <a class="chip" href="https://www.cloudskillsboost.google/public_profiles/ced322f5-a009-4b19-b13f-a3c366ec1568" target="_blank" rel="noopener">Google Cloud Skills profile ↗</a>
+    <a class="chip" href="https://google.accredible.com/profile/sachinsahu474664/wallet" target="_blank" rel="noopener">Google Marketing credentials ↗</a>
+    <a class="chip" href="https://github.com/sachsahu21" target="_blank" rel="noopener">github.com/sachsahu21 ↗</a>
+  </div>
+</section>
 
 <section id="expertise" class="wrap">
   <p class="sec-label"><span class="comment">--</span> expertise</p>
@@ -256,15 +320,16 @@
 
   <div class="project">
     <div class="project-head">
-      <h3>[Add your third project here]</h3>
-      <span class="stack">Your · Stack · Here</span>
+      <h3>GST implementation — Malaysia</h3>
+      <span class="stack">Development · User support</span>
     </div>
     <p>
-      Describe the problem, what you built, and the tools you used. Keep it to
-      2–3 sentences: what was broken or missing, your approach, and what changed
-      as a result.
+      Delivered both the development and user-support tracks of a national GST
+      implementation project in Malaysia. Worked directly with business stakeholders,
+      raising flags early on serious issues and cross-checking requirements before
+      building — earning a strong reputation across the department.
     </p>
-    <p class="impact">One line on the measurable outcome</p>
+    <p class="impact">Colleague-endorsed on LinkedIn for extraordinary delivery</p>
   </div>
 </section>
 
@@ -273,13 +338,13 @@
   <h2>Where I've worked</h2>
 
   <div class="xp">
-    <p class="period">20XX — PRESENT</p>
+    <p class="period">PRESENT</p>
     <h3>Data Engineer</h3>
-    <p class="org">[Company Name] · Singapore</p>
+    <p class="org">Artefact · Singapore</p>
     <ul>
       <li>Own multi-country data ingestion and transformation pipelines end to end</li>
-      <li>Develop and optimize MaxCompute SQL workloads scheduled via DataWorks</li>
-      <li>Partner with analytics teams to deliver dashboard-ready datasets</li>
+      <li>Develop and optimize MaxCompute SQL workloads scheduled via AliCloud DataWorks</li>
+      <li>Partner with analytics teams to deliver dashboard-ready datasets across markets</li>
     </ul>
   </div>
 
@@ -292,34 +357,34 @@
       <li>Lead with verbs: built, migrated, automated, reduced, delivered</li>
     </ul>
   </div>
+
+  <div class="xp">
+    <p class="period">EDUCATION</p>
+    <h3>Birla Institute of Technology and Science (BITS), Pilani</h3>
+    <p class="org">[Degree / Programme — add details]</p>
+  </div>
 </section>
 
-<section id="certifications" class="wrap">
-  <p class="sec-label"><span class="comment">--</span> certifications</p>
-  <h2>Certified across three clouds</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h3>GOOGLE CLOUD</h3>
-      <ul>
-        <li><strong>Professional Cloud Architect</strong> — designing secure, scalable, highly available GCP solutions</li>
-        <li><a href="https://www.credly.com/badges/8a8964a8-27d8-4fca-ab14-d808a86b846b/public_url" target="_blank" rel="noopener">Verify on Credly →</a></li>
-        <li><a href="https://www.cloudskillsboost.google/public_profiles/ced322f5-a009-4b19-b13f-a3c366ec1568" target="_blank" rel="noopener">Cloud Skills profile →</a></li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <h3>MICROSOFT AZURE</h3>
-      <ul>
-        <li><strong>Azure certified</strong> — verified achievements on Credly</li>
-        <li><a href="https://www.credly.com/users/sachinsahu/badges" target="_blank" rel="noopener">View badges →</a></li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <h3>ALIBABA CLOUD</h3>
-      <ul>
-        <li><strong>Alibaba Cloud certified</strong> — the platform I use daily in production</li>
-        <li><a href="https://drive.google.com/file/d/1Qd9R6V9ZbJsKOMR4IzQwNoWz2TIFNaYp/view" target="_blank" rel="noopener">View certificate →</a></li>
-      </ul>
-    </div>
+<section id="recommendations" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> recommendations</p>
+  <h2>What colleagues say</h2>
+
+  <div class="quote">
+    <p>
+      [Paste your full first LinkedIn recommendation here — the one about your
+      strong technical skills, deep data engineering expertise, and delivering
+      complex projects with measurable improvements in efficiency and accuracy.]
+    </p>
+    <p class="who">— [Name, Title] · via LinkedIn</p>
+  </div>
+
+  <div class="quote">
+    <p>
+      [Paste your full second LinkedIn recommendation here — the one from the
+      GST Malaysia project praising your development work, user support, and
+      reliability with commitments.]
+    </p>
+    <p class="who">— [Name, Title] · via LinkedIn</p>
   </div>
 </section>
 
