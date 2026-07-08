@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sachin Sahu — Data Engineer</title>
-<meta name="description" content="Data engineer building multi-country data pipelines, cloud warehouses, and analytics systems.">
+<title>Sachin Sahu — Data Engineering Manager</title>
+<meta name="description" content="Data & AI engineering leader with 14+ years across GCP, Azure, and Alibaba Cloud. Currently Data Engineering Manager at the Ministry of Health, Singapore.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#F4F6F8;
@@ -16,6 +16,7 @@
     --line:#CBD6DE;
     --teal:#0E7C7B;
     --teal-dark:#0A5958;
+    --teal-bright:#14B8B6;
     --amber:#E8A33D;
     --card:#FFFFFF;
     --mono:'IBM Plex Mono',ui-monospace,monospace;
@@ -27,119 +28,123 @@
   a{color:var(--teal-dark);text-decoration:none}
   a:hover{text-decoration:underline}
   :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
-
   .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 
   /* ---------- nav ---------- */
-  nav{position:sticky;top:0;background:rgba(244,246,248,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-  .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:960px;margin:0 auto}
-  .logo{font-family:var(--mono);font-weight:600;font-size:.95rem;color:var(--ink)}
-  .logo .prompt{color:var(--teal)}
-  .nav-links{display:flex;gap:22px;font-family:var(--mono);font-size:.82rem}
-  .nav-links a{color:var(--ink-soft)}
-  .nav-links a:hover{color:var(--teal-dark);text-decoration:none}
+  nav{position:sticky;top:0;background:rgba(8,16,24,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(143,166,181,.25);z-index:20}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:13px 24px;max-width:960px;margin:0 auto}
+  .logo{font-family:var(--mono);font-weight:600;font-size:.95rem;color:#E8F0F4}
+  .logo .prompt{color:var(--teal-bright)}
+  .nav-links{display:flex;gap:18px;font-family:var(--mono);font-size:.8rem;flex-wrap:wrap}
+  .nav-links a{color:#8FA6B5}
+  .nav-links a:hover{color:var(--teal-bright);text-decoration:none}
 
-  /* ---------- hero ---------- */
-  header{padding:72px 0 48px}
-  .kicker{font-family:var(--mono);font-size:.8rem;color:var(--teal);letter-spacing:.04em;margin-bottom:14px}
+  /* ---------- dark AI hero ---------- */
+  header{position:relative;background:radial-gradient(1200px 600px at 72% -10%, #0C1A28, #081018);color:#E8F0F4;overflow:hidden;padding:76px 0 56px}
+  #mesh{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+  .hero-inner{position:relative;z-index:2}
+  .status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.75rem;color:var(--teal-bright);border:1px solid rgba(20,184,182,.35);background:rgba(20,184,182,.07);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+  .status .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 8px var(--teal-bright)}
+  @media (prefers-reduced-motion:no-preference){.status .dot{animation:pulse 2s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}}
   h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:700;line-height:1.12;letter-spacing:-.02em;margin-bottom:18px}
-  h1 .accent{color:var(--teal)}
-  .lede{max-width:620px;color:var(--ink-soft);font-size:1.05rem;margin-bottom:34px}
-  .hero-meta{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:.8rem;color:var(--ink-soft)}
-  .hero-meta span::before{content:'▸ ';color:var(--amber)}
+  h1 .accent{color:var(--teal-bright);text-shadow:0 0 24px rgba(20,184,182,.45)}
+  .lede{max-width:660px;color:#A8BCC8;font-size:1.05rem;line-height:1.65;margin-bottom:28px}
+  .lede strong{color:#E8F0F4;font-weight:500}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+  .btn{font-family:var(--mono);font-size:.85rem;font-weight:500;padding:11px 20px;border-radius:6px;display:inline-block}
+  .hero-cta .btn.primary{background:var(--teal-bright);color:#03211F;box-shadow:0 0 22px rgba(20,184,182,.3)}
+  .hero-cta .btn.primary:hover{background:#19D3D0;text-decoration:none}
+  .hero-cta .btn.ghost{color:var(--teal-bright);border:1.5px solid rgba(20,184,182,.5)}
+  .hero-cta .btn.ghost:hover{background:rgba(20,184,182,.1);text-decoration:none}
 
-  /* ---------- pipeline (signature) ---------- */
-  .pipeline{margin:48px 0 8px;overflow-x:auto;padding-bottom:8px}
-  .pipeline svg{min-width:720px;width:100%;height:auto;display:block}
-  .p-node{fill:var(--card);stroke:var(--line);stroke-width:1.5}
-  .p-node-label{font-family:var(--mono);font-size:12.5px;font-weight:600;fill:var(--ink)}
-  .p-node-sub{font-family:var(--mono);font-size:10px;fill:var(--ink-soft)}
-  .p-edge{stroke:var(--line);stroke-width:1.5;fill:none}
-  .p-dot{fill:var(--teal)}
-  @media (prefers-reduced-motion: no-preference){
-    .p-dot{animation:flow 3.2s linear infinite}
-    .p-dot.d2{animation-delay:1.05s}
-    .p-dot.d3{animation-delay:2.1s}
-    @keyframes flow{
-      0%{transform:translateX(0);opacity:0}
-      6%{opacity:1}
-      94%{opacity:1}
-      100%{transform:translateX(600px);opacity:0}
-    }
-  }
-
-  /* ---------- certifications ---------- */
-  .cert-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
-  .cert-head h2{margin-bottom:0}
-  .verified-pill{font-family:var(--mono);font-size:.72rem;background:rgba(14,124,123,.1);color:var(--teal-dark);border:1px solid rgba(14,124,123,.3);padding:4px 12px;border-radius:99px}
-  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-  .cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;position:relative}
-  .cert-card.flagship{border:2px solid var(--teal)}
-  .flag-badge{position:absolute;top:-11px;left:16px;background:var(--teal);color:#fff;font-family:var(--mono);font-size:.66rem;padding:3px 11px;border-radius:99px;letter-spacing:.03em}
-  .cert-provider{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);letter-spacing:.05em;margin-bottom:8px}
-  .cert-card h3{font-size:1.02rem;font-weight:600;margin-bottom:5px}
-  .cert-card p{font-size:.86rem;color:var(--ink-soft);margin-bottom:14px}
-  .cert-link{font-family:var(--mono);font-size:.78rem}
-  .cert-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-  .chip{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);background:var(--card);color:var(--ink-soft);padding:5px 13px;border-radius:99px}
-  .chip:hover{border-color:var(--teal);color:var(--teal-dark);text-decoration:none}
-
-  /* ---------- recommendations ---------- */
-  .quote{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:16px}
-  .quote p{font-size:.95rem;color:var(--ink-soft);font-style:italic;margin-bottom:10px}
-  .quote .who{font-family:var(--mono);font-size:.75rem;color:var(--ink);font-style:normal}
-
-  /* ---------- hero buttons ---------- */
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  /* stats strip */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:rgba(143,166,181,.2);border:1px solid rgba(143,166,181,.2);border-radius:10px;overflow:hidden;position:relative;z-index:2}
+  .stat{background:rgba(12,26,40,.6);padding:18px 16px;text-align:center}
+  .stat .num{font-family:var(--mono);font-size:1.5rem;font-weight:600;color:var(--teal-bright)}
+  .stat .lbl{font-size:.72rem;color:#8FA6B5;margin-top:4px;line-height:1.3}
 
   /* ---------- sections ---------- */
-  section{padding:56px 0;border-top:1px solid var(--line)}
+  section{padding:54px 0;border-top:1px solid var(--line)}
   .sec-label{font-family:var(--mono);font-size:.82rem;color:var(--ink-soft);margin-bottom:8px}
   .sec-label .comment{color:var(--teal)}
-  h2{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;margin-bottom:28px}
+  h2{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  .sec-intro{color:var(--ink-soft);max-width:640px;margin-bottom:26px;font-size:.96rem}
+
+  /* ---------- experience ---------- */
+  .xp{border-left:2px solid var(--line);padding-left:26px;position:relative;margin-bottom:30px}
+  .xp::before{content:'';position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--teal)}
+  .xp.current::before{background:var(--amber);box-shadow:0 0 0 4px rgba(232,163,61,.2)}
+  .xp .period{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);margin-bottom:4px}
+  .xp h3{font-size:1.08rem;font-weight:600}
+  .xp .org{color:var(--teal-dark);font-weight:500;font-size:.92rem;margin-bottom:3px}
+  .xp .proj{font-size:.82rem;color:var(--ink-soft);font-style:italic;margin-bottom:9px}
+  .xp ul{list-style:none;margin-top:6px}
+  .xp li{color:var(--ink-soft);font-size:.92rem;padding:3px 0 3px 16px;position:relative}
+  .xp li::before{content:'▸';position:absolute;left:0;color:var(--amber);font-size:.75rem;top:6px}
+  .xp li strong{color:var(--ink);font-weight:600}
+  .xp-more{font-family:var(--mono);font-size:.8rem}
 
   /* ---------- expertise ---------- */
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
   .skill-card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 22px}
-  .skill-card h3{font-family:var(--mono);font-size:.85rem;font-weight:600;color:var(--teal-dark);margin-bottom:12px;letter-spacing:.02em}
+  .skill-card h3{font-family:var(--mono);font-size:.82rem;font-weight:600;color:var(--teal-dark);margin-bottom:12px;letter-spacing:.02em}
   .skill-card ul{list-style:none}
-  .skill-card li{padding:5px 0;font-size:.93rem;color:var(--ink-soft);border-bottom:1px dashed var(--line)}
+  .skill-card li{padding:5px 0;font-size:.9rem;color:var(--ink-soft);border-bottom:1px dashed var(--line)}
   .skill-card li:last-child{border-bottom:none}
   .skill-card li strong{color:var(--ink);font-weight:500}
 
-  /* ---------- projects ---------- */
-  .project{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px 28px;margin-bottom:18px}
-  .project-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:10px}
-  .project h3{font-size:1.12rem;font-weight:600}
-  .stack{font-family:var(--mono);font-size:.72rem;color:var(--teal-dark);background:rgba(14,124,123,.08);border:1px solid rgba(14,124,123,.25);padding:3px 9px;border-radius:99px;white-space:nowrap}
-  .project p{color:var(--ink-soft);font-size:.95rem;margin-bottom:10px}
-  .impact{font-family:var(--mono);font-size:.8rem;color:var(--ink);margin-top:6px}
-  .impact::before{content:'→ ';color:var(--amber);font-weight:600}
+  /* ---------- certifications ---------- */
+  .cert-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .cert-head h2{margin-bottom:0}
+  .verified-pill{font-family:var(--mono);font-size:.72rem;background:rgba(14,124,123,.1);color:var(--teal-dark);border:1px solid rgba(14,124,123,.3);padding:4px 12px;border-radius:99px}
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;position:relative}
+  .cert-card.flagship{border:2px solid var(--teal)}
+  .flag-badge{position:absolute;top:-11px;left:16px;background:var(--teal);color:#fff;font-family:var(--mono);font-size:.64rem;padding:3px 11px;border-radius:99px;letter-spacing:.03em}
+  .cert-provider{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);letter-spacing:.05em;margin-bottom:8px}
+  .cert-card h3{font-size:.98rem;font-weight:600;margin-bottom:5px}
+  .cert-card p{font-size:.84rem;color:var(--ink-soft);margin-bottom:0}
+  .cert-link{font-family:var(--mono);font-size:.78rem;display:inline-block;margin-top:12px}
 
-  /* ---------- experience ---------- */
-  .xp{border-left:2px solid var(--line);padding-left:26px;position:relative;margin-bottom:34px}
-  .xp::before{content:'';position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--teal)}
-  .xp .period{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);margin-bottom:4px}
-  .xp h3{font-size:1.05rem;font-weight:600}
-  .xp .org{color:var(--teal-dark);font-weight:500;font-size:.92rem;margin-bottom:8px}
-  .xp ul{list-style:none;margin-top:6px}
-  .xp li{color:var(--ink-soft);font-size:.93rem;padding:3px 0 3px 16px;position:relative}
-  .xp li::before{content:'–';position:absolute;left:0;color:var(--amber)}
+  /* ---------- github ---------- */
+  .gh-stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .gh-stats img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+  .repo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .repo-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column}
+  .repo-card .repo-tag{font-family:var(--mono);font-size:.66rem;color:var(--amber);margin-bottom:7px;letter-spacing:.05em}
+  .repo-card .repo-name{font-family:var(--mono);font-size:.9rem;font-weight:600;color:var(--teal-dark);margin-bottom:8px}
+  .repo-card p{font-size:.86rem;color:var(--ink-soft);margin-bottom:14px;flex-grow:1}
+
+  /* ---------- recommendations ---------- */
+  .quote{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:16px}
+  .quote p{font-size:.94rem;color:var(--ink-soft);font-style:italic;margin-bottom:12px}
+  .quote .who{font-family:var(--mono);font-size:.76rem;color:var(--ink);font-style:normal;line-height:1.5}
+  .quote .who .role{color:var(--ink-soft)}
+
+  /* ---------- education ---------- */
+  .edu-row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap}
+  .edu-row:last-child{border-bottom:none}
+  .edu-row .deg{font-weight:500;font-size:.95rem}
+  .edu-row .school{color:var(--ink-soft);font-size:.88rem}
+  .edu-row .yr{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);white-space:nowrap}
+
+  /* ---------- hobbies ---------- */
+  .hobby-tags{display:flex;gap:10px;flex-wrap:wrap}
+  .hobby{font-family:var(--mono);font-size:.82rem;color:var(--ink);background:var(--card);border:1px solid var(--line);padding:8px 15px;border-radius:99px}
 
   /* ---------- contact ---------- */
-  .contact-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px}
-  .btn{font-family:var(--mono);font-size:.85rem;font-weight:500;padding:11px 20px;border-radius:6px;border:1.5px solid var(--teal-dark);display:inline-block}
-  .btn.primary{background:var(--teal-dark);color:#fff}
+  .contact-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn.primary{background:var(--teal-dark);color:#fff;border:1.5px solid var(--teal-dark)}
   .btn.primary:hover{background:var(--teal);text-decoration:none}
-  .btn.ghost{color:var(--teal-dark)}
+  .btn.ghost{color:var(--teal-dark);border:1.5px solid var(--teal-dark)}
   .btn.ghost:hover{background:rgba(14,124,123,.07);text-decoration:none}
 
-  footer{border-top:1px solid var(--line);padding:26px 0;font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);text-align:center}
+  footer{border-top:1px solid var(--line);padding:24px 0;font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);text-align:center}
 
   @media (max-width:640px){
-    header{padding:48px 0 32px}
-    section{padding:44px 0}
-    .nav-links{gap:14px;font-size:.75rem}
+    header{padding:52px 0 40px}
+    section{padding:42px 0}
+    .nav-links{gap:12px;font-size:.72rem}
   }
 </style>
 </head>
@@ -149,83 +154,148 @@
   <div class="nav-inner">
     <div class="logo"><span class="prompt">~$</span> sachin.sahu</div>
     <div class="nav-links">
-      <a href="#expertise">expertise</a>
+      <a href="#experience">experience</a>
+      <a href="#expertise">stack</a>
       <a href="#projects">projects</a>
       <a href="#certifications">certs</a>
       <a href="#contact">contact</a>
       <a href="https://github.com/sachsahu21" target="_blank" rel="noopener">github ↗</a>
-      <a href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">resume ↗</a>
     </div>
   </div>
 </nav>
 
-<header class="wrap">
-  <p class="kicker">// data &amp; cloud engineer · singapore</p>
-  <h1>I build pipelines that move data <span class="accent">across countries</span>, reliably.</h1>
-  <p class="lede">
-    Certified data architect and engineer with extensive experience in Google Cloud
-    and multi-country data platforms. Currently at Artefact, Singapore — designing
-    ETL pipelines, cloud data warehouses, and analytics-ready datasets that turn messy,
-    inconsistent source data into clean, trusted tables teams actually use.
-  </p>
-  <div class="hero-cta">
-    <a class="btn primary" href="https://github.com/sachsahu21" target="_blank" rel="noopener">View my GitHub →</a>
-    <a class="btn ghost" href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Resume</a>
-  </div>
-  <div class="hero-meta">
-    <span>MaxCompute / ODPS</span>
-    <span>Python · pandas</span>
-    <span>AliCloud DataWorks</span>
-    <span>Hologres</span>
-  </div>
+<header>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <span class="status"><span class="dot"></span> Data Engineering Manager · Ministry of Health, Singapore</span>
+    <h1>I build the data foundations<br>behind <span class="accent">AI and analytics</span> at national scale.</h1>
+    <p class="lede">
+      <strong>Sachin Sahu</strong> — Certified Data Architect with <strong>14+ years</strong> across
+      Google Cloud, Azure, and Alibaba Cloud. Today I lead data engineering for
+      <strong>national healthcare initiatives</strong> — precision medicine, genomic data, OMOP —
+      at Singapore's Ministry of Health. Before that: L'Oréal's global marketing data platform at
+      Artefact, and anti-fraud &amp; finance data products at <strong>Lazada (Alibaba Group)</strong>.
+    </p>
+    <div class="hero-cta">
+      <a class="btn primary" href="https://github.com/sachsahu21" target="_blank" rel="noopener">View my GitHub →</a>
+      <a class="btn ghost" href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Resume</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
 
-  <!-- signature: animated pipeline built from the real stack -->
-  <div class="pipeline" aria-label="Diagram of a data pipeline: sources flow through Python ETL into MaxCompute, then Hologres, then dashboards">
-    <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" role="img">
-      <!-- edges -->
-      <line class="p-edge" x1="120" y1="60" x2="200" y2="60"/>
-      <line class="p-edge" x1="320" y1="60" x2="360" y2="60"/>
-      <line class="p-edge" x1="480" y1="60" x2="520" y2="60"/>
-      <line class="p-edge" x1="640" y1="60" x2="680" y2="60"/>
-      <!-- flowing dots -->
-      <circle class="p-dot" cx="120" cy="60" r="4"/>
-      <circle class="p-dot d2" cx="120" cy="60" r="4"/>
-      <circle class="p-dot d3" cx="120" cy="60" r="4"/>
-      <!-- nodes -->
-      <g>
-        <rect class="p-node" x="10" y="36" width="110" height="48" rx="7"/>
-        <text class="p-node-label" x="65" y="57" text-anchor="middle">SOURCES</text>
-        <text class="p-node-sub" x="65" y="73" text-anchor="middle">FTP · APIs · files</text>
-      </g>
-      <g>
-        <rect class="p-node" x="200" y="36" width="120" height="48" rx="7"/>
-        <text class="p-node-label" x="260" y="57" text-anchor="middle">PYTHON ETL</text>
-        <text class="p-node-sub" x="260" y="73" text-anchor="middle">pandas · validation</text>
-      </g>
-      <g>
-        <rect class="p-node" x="360" y="36" width="120" height="48" rx="7"/>
-        <text class="p-node-label" x="420" y="57" text-anchor="middle">MAXCOMPUTE</text>
-        <text class="p-node-sub" x="420" y="73" text-anchor="middle">SQL · DataWorks</text>
-      </g>
-      <g>
-        <rect class="p-node" x="520" y="36" width="120" height="48" rx="7"/>
-        <text class="p-node-label" x="580" y="57" text-anchor="middle">HOLOGRES</text>
-        <text class="p-node-sub" x="580" y="73" text-anchor="middle">serving layer</text>
-      </g>
-      <g>
-        <rect class="p-node" x="680" y="36" width="72" height="48" rx="7"/>
-        <text class="p-node-label" x="716" y="57" text-anchor="middle">BI</text>
-        <text class="p-node-sub" x="716" y="73" text-anchor="middle">dashboards</text>
-      </g>
-    </svg>
+    <div class="stats">
+      <div class="stat"><div class="num">14+</div><div class="lbl">years in data</div></div>
+      <div class="stat"><div class="num">4</div><div class="lbl">clouds certified</div></div>
+      <div class="stat"><div class="num">700+</div><div class="lbl">users on Apollo dashboard</div></div>
+      <div class="stat"><div class="num">1&nbsp;TB+</div><div class="lbl">data per pipeline run</div></div>
+      <div class="stat"><div class="num">50%</div><div class="lbl">faster data ingestion</div></div>
+    </div>
   </div>
 </header>
+
+<section id="experience" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> experience</p>
+  <h2>Where I've made an impact</h2>
+  <p class="sec-intro">14+ years spanning healthcare, digital marketing, fintech, e-commerce, and enterprise SAP — moving from SAP/BI development into cloud data engineering and leadership.</p>
+
+  <div class="xp current">
+    <p class="period">JAN 2024 — PRESENT</p>
+    <h3>Data Engineering Manager</h3>
+    <p class="org">Ministry of Health, Singapore <span style="color:var(--ink-soft);font-weight:400">· via Synapxe</span></p>
+    <p class="proj">Trust Data Engineer — national healthcare data transformation</p>
+    <ul>
+      <li>Automated large-scale workflows, cutting data ingestion from <strong>3–4 weeks to 1–2 weeks</strong> while processing <strong>1&nbsp;TB+</strong> per run</li>
+      <li>Contributed to national initiatives — <strong>precision medicine, genomic data integration, OMOP mapping</strong> — across multiple government agencies</li>
+      <li>Built a scalable API proof-of-concept for cross-agency healthcare data integration (OMOP)</li>
+      <li>Centralized task management cut duplication <strong>50%</strong>; Confluence + data catalog cut onboarding time <strong>40%</strong></li>
+    </ul>
+  </div>
+
+  <div class="xp">
+    <p class="period">NOV 2022 — JAN 2024</p>
+    <h3>Data Engineering Architect &amp; Manager</h3>
+    <p class="org">Artefact Consulting, Singapore <span style="color:var(--ink-soft);font-weight:400">· client: L'Oréal</span></p>
+    <p class="proj">Apollo — global digital marketing expense platform (GCP, GMP, Power BI)</p>
+    <ul>
+      <li>Architected a single scalable dashboard serving <strong>700+ users across 15 markets</strong>, integrating <strong>13 marketing platforms and 2,460 accounts</strong></li>
+      <li>Cross-linked upper-funnel campaigns with lower-funnel e-commerce data for end-to-end customer-journey tracking</li>
+      <li>Built APIs for daily acquisition from Facebook, Amazon, TikTok, and Google (DV360, GA4, Google Ads)</li>
+      <li>Built a data lake and transformed semi-structured data into BigQuery; added governance views to catch anomalies</li>
+    </ul>
+  </div>
+
+  <div class="xp">
+    <p class="period">MAR 2018 — MAR 2022</p>
+    <h3>Data Engineer &amp; Data Product Manager</h3>
+    <p class="org">Lazada — Alibaba Group, Singapore</p>
+    <p class="proj">Regional Anti-Fraud &amp; Finance</p>
+    <ul>
+      <li>Built fraud-detection models and signals for seller payments and risk mitigation; operationalized security intelligence on Alibaba's tooling</li>
+      <li>Led migration from legacy reporting to Alibaba's proprietary platform; owned pipeline reliability and data cleanliness</li>
+      <li>Worked directly with <strong>CFO, accounting, and finance steering</strong> on budgeting, campaign analysis, and reconciliation (Accounting, Billing, SAP, P&amp;L)</li>
+      <li>Built an enterprise-wide profitability report across business units and investor performance reports for stakeholders</li>
+    </ul>
+  </div>
+
+  <div class="xp">
+    <p class="period">APR 2022 — OCT 2022</p>
+    <h3>Data Engineer &amp; Product Manager</h3>
+    <p class="org">Spenmo, Singapore <span style="color:var(--ink-soft);font-weight:400">· Credit Risk &amp; Fraud</span></p>
+    <ul>
+      <li>Built data capabilities for credit and fraud with cross-functional teams; designed leadership dashboards and key business metrics</li>
+    </ul>
+  </div>
+
+  <p class="xp-more" style="padding-left:26px">
+    <a href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Earlier roles — Icon (Adidas, Daikin, MHA, Hoya), Petronas GST, TCS, Suzlon → full resume ↗</a>
+  </p>
+</section>
+
+<section id="expertise" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> stack</p>
+  <h2>What I work with</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>CLOUD DATA</h3>
+      <ul>
+        <li><strong>Google Cloud</strong> — BigQuery, Looker, Dataflow, Pub/Sub, Dataproc, GCS</li>
+        <li><strong>Alibaba Cloud</strong> — ODPS, OneData, OneService, Blink (Flink)</li>
+        <li><strong>Azure</strong> — Data Factory, Data Lake, Synapse</li>
+        <li><strong>AWS</strong> — SageMaker, S3, Glue, API Gateway</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>BIG DATA &amp; PIPELINES</h3>
+      <ul>
+        <li><strong>Hadoop stack</strong> — HDFS, Hive, Sqoop, MapReduce</li>
+        <li><strong>Spark / PySpark</strong> · <strong>Kafka</strong> · <strong>HBase</strong></li>
+        <li><strong>ETL &amp; architecture</strong> — data lakes, CI/CD, Linux</li>
+        <li><strong>Tools</strong> — Git, Postman, Confluence, Jira, Grafana</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>MARKETING &amp; CDP</h3>
+      <ul>
+        <li><strong>TreasureData CDP</strong> — certified</li>
+        <li><strong>Google Marketing</strong> — DV360, GA4, GTM, Google Ads</li>
+        <li><strong>Amazon Ads &amp; DSP</strong> · <strong>Facebook Ads</strong> · <strong>TikTok</strong></li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>SAP &amp; ENTERPRISE BI</h3>
+      <ul>
+        <li><strong>SAP</strong> — BI/BW, ABAP, S/4 HANA, ECC, CRM, NetWeaver</li>
+        <li><strong>Qlik</strong> — QlikView, Qlik Sense</li>
+        <li><strong>Power BI</strong> · BEX queries · data modeling</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <section id="certifications" class="wrap">
   <p class="sec-label"><span class="comment">--</span> certifications</p>
   <div class="cert-head">
-    <h2>Certified across 3 clouds</h2>
-    <span class="verified-pill">✓ verified on Credly</span>
+    <h2>Certified across 4 clouds</h2>
+    <span class="verified-pill">✓ GCP · Azure · Alibaba · AWS</span>
   </div>
   <div class="cert-grid">
     <div class="cert-card flagship">
@@ -233,135 +303,60 @@
       <p class="cert-provider">GOOGLE CLOUD</p>
       <h3>Professional Cloud Architect</h3>
       <p>Design of secure, scalable, highly available GCP solutions</p>
-      <a class="cert-link" href="https://www.credly.com/badges/8a8964a8-27d8-4fca-ab14-d808a86b846b/public_url" target="_blank" rel="noopener">Verify badge ↗</a>
-    </div>
-    <div class="cert-card">
-      <p class="cert-provider">MICROSOFT AZURE</p>
-      <h3>Azure certified</h3>
-      <p>Verified achievements on Credly</p>
-      <a class="cert-link" href="https://www.credly.com/users/sachinsahu/badges" target="_blank" rel="noopener">View badges ↗</a>
+      <a class="cert-link" href="https://www.credly.com/users/sachinsahu/badges" target="_blank" rel="noopener">Verify on Credly ↗</a>
     </div>
     <div class="cert-card">
       <p class="cert-provider">ALIBABA CLOUD</p>
-      <h3>Alibaba Cloud certified</h3>
-      <p>The platform I run in production daily</p>
-      <a class="cert-link" href="https://drive.google.com/file/d/1Qd9R6V9ZbJsKOMR4IzQwNoWz2TIFNaYp/view" target="_blank" rel="noopener">View certificate ↗</a>
+      <h3>4× Certified</h3>
+      <p>Big Data · Computing · Cloud Security · Cloud Native</p>
     </div>
-  </div>
-  <div class="cert-chips">
-    <a class="chip" href="https://www.cloudskillsboost.google/public_profiles/ced322f5-a009-4b19-b13f-a3c366ec1568" target="_blank" rel="noopener">Google Cloud Skills profile ↗</a>
-    <a class="chip" href="https://google.accredible.com/profile/sachinsahu474664/wallet" target="_blank" rel="noopener">Google Marketing credentials ↗</a>
-    <a class="chip" href="https://github.com/sachsahu21" target="_blank" rel="noopener">github.com/sachsahu21 ↗</a>
-  </div>
-</section>
-
-<section id="expertise" class="wrap">
-  <p class="sec-label"><span class="comment">--</span> expertise</p>
-  <h2>What I work with</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h3>LANGUAGES &amp; QUERYING</h3>
-      <ul>
-        <li><strong>SQL</strong> — MaxCompute/ODPS, complex transforms, regex-based cleansing</li>
-        <li><strong>Python</strong> — pandas, ETL scripting, automation</li>
-        <li><strong>Bash / Linux</strong> — server environments, cron, tooling</li>
-      </ul>
+    <div class="cert-card">
+      <p class="cert-provider">MICROSOFT AZURE</p>
+      <h3>3× Fundamentals</h3>
+      <p>Azure · Azure Data · Azure AI Fundamentals</p>
     </div>
-    <div class="skill-card">
-      <h3>PLATFORMS &amp; CLOUD</h3>
-      <ul>
-        <li><strong>AliCloud DataWorks</strong> — orchestration &amp; scheduling</li>
-        <li><strong>MaxCompute</strong> — large-scale warehousing</li>
-        <li><strong>Hologres</strong> — real-time serving for dashboards</li>
-      </ul>
+    <div class="cert-card">
+      <p class="cert-provider">TREASURE DATA</p>
+      <h3>CDP Certified</h3>
+      <p>Customer Data Platform specialist</p>
     </div>
-    <div class="skill-card">
-      <h3>PRACTICES</h3>
-      <ul>
-        <li><strong>Data quality</strong> — normalization, dedup, edge-case handling</li>
-        <li><strong>Multi-country pipelines</strong> — schema variance across markets</li>
-        <li><strong>Dev workflow</strong> — VS Code Remote SSH, Git, AI-assisted development</li>
-      </ul>
+    <div class="cert-card">
+      <p class="cert-provider">AWS · GOOGLE</p>
+      <h3>Big Data &amp; Marketing</h3>
+      <p>AWS Big Data · BigQuery ML · Google Marketing Platform</p>
     </div>
   </div>
 </section>
 
 <section id="projects" class="wrap">
-  <p class="sec-label"><span class="comment">--</span> selected projects</p>
-  <h2>Things I've built</h2>
+  <p class="sec-label"><span class="comment">--</span> projects</p>
+  <h2>Weekend builds</h2>
+  <p class="sec-intro">Beyond the day job — small experiments I build for fun. Computer vision, messaging automation, and whatever catches my curiosity next.</p>
 
-  <div class="project">
-    <div class="project-head">
-      <h3>Multi-country sales data pipeline</h3>
-      <span class="stack">Python · FTP · Hologres</span>
+  <div class="gh-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=sachsahu21&hide_border=false&include_all_commits=true" alt="Sachin's GitHub statistics" loading="lazy">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachsahu21&hide_border=false&include_all_commits=true&layout=compact" alt="Sachin's most-used programming languages" loading="lazy">
+  </div>
+
+  <div class="repo-grid">
+    <div class="repo-card">
+      <p class="repo-tag">COMPUTER VISION</p>
+      <p class="repo-name">face-scan</p>
+      <p>Face detection &amp; recognition experiment. <em>[Add one line: what it does + what you explored.]</em></p>
+      <a class="cert-link" href="https://github.com/sachsahu21/face-scan" target="_blank" rel="noopener">View repo ↗</a>
     </div>
-    <p>
-      Designed and maintained an automated pipeline ingesting daily sales files from
-      multiple countries over FTP, each with its own schema and column conventions.
-      Built country-aware parsing logic in Python/pandas and loaded standardized
-      output into Hologres to power a regional sales dashboard.
-    </p>
-    <p class="impact">Unified reporting across markets with a single daily refresh</p>
-  </div>
-
-  <div class="project">
-    <div class="project-head">
-      <h3>Data normalization engine for reference codes</h3>
-      <span class="stack">MaxCompute SQL · regex</span>
+    <div class="repo-card">
+      <p class="repo-tag">IMAGE PROCESSING</p>
+      <p class="repo-name">photo</p>
+      <p>Photo tooling project. <em>[Add one line: what it does.]</em></p>
+      <a class="cert-link" href="https://github.com/sachsahu21/photo" target="_blank" rel="noopener">View repo ↗</a>
     </div>
-    <p>
-      Source systems delivered nationality and reference codes in wildly inconsistent
-      formats — mixed leading zeros, trailing punctuation, extra digits. Built a robust
-      chained REGEXP_REPLACE + SUBSTR normalization layer in ODPS SQL, iterated against
-      real-data edge cases until output was clean and deterministic.
-    </p>
-    <p class="impact">Eliminated manual cleanup and downstream join failures</p>
-  </div>
-
-  <div class="project">
-    <div class="project-head">
-      <h3>GST implementation — Malaysia</h3>
-      <span class="stack">Development · User support</span>
+    <div class="repo-card">
+      <p class="repo-tag">MESSAGING AUTOMATION</p>
+      <p class="repo-name">whatsappwebhook</p>
+      <p>WhatsApp webhook integration — receiving and processing message events programmatically.</p>
+      <a class="cert-link" href="https://github.com/sachsahu21/whatsappwebhook" target="_blank" rel="noopener">View repo ↗</a>
     </div>
-    <p>
-      Delivered both the development and user-support tracks of a national GST
-      implementation project in Malaysia. Worked directly with business stakeholders,
-      raising flags early on serious issues and cross-checking requirements before
-      building — earning a strong reputation across the department.
-    </p>
-    <p class="impact">Colleague-endorsed on LinkedIn for extraordinary delivery</p>
-  </div>
-</section>
-
-<section id="experience" class="wrap">
-  <p class="sec-label"><span class="comment">--</span> experience</p>
-  <h2>Where I've worked</h2>
-
-  <div class="xp">
-    <p class="period">PRESENT</p>
-    <h3>Data Engineer</h3>
-    <p class="org">Artefact · Singapore</p>
-    <ul>
-      <li>Own multi-country data ingestion and transformation pipelines end to end</li>
-      <li>Develop and optimize MaxCompute SQL workloads scheduled via AliCloud DataWorks</li>
-      <li>Partner with analytics teams to deliver dashboard-ready datasets across markets</li>
-    </ul>
-  </div>
-
-  <div class="xp">
-    <p class="period">20XX — 20XX</p>
-    <h3>[Previous Role]</h3>
-    <p class="org">[Previous Company] · [Location]</p>
-    <ul>
-      <li>Add 2–3 bullets describing scope and achievements</li>
-      <li>Lead with verbs: built, migrated, automated, reduced, delivered</li>
-    </ul>
-  </div>
-
-  <div class="xp">
-    <p class="period">EDUCATION</p>
-    <h3>Birla Institute of Technology and Science (BITS), Pilani</h3>
-    <p class="org">[Degree / Programme — add details]</p>
   </div>
 </section>
 
@@ -370,35 +365,64 @@
   <h2>What colleagues say</h2>
 
   <div class="quote">
-    <p>
-      [Paste your full first LinkedIn recommendation here — the one about your
-      strong technical skills, deep data engineering expertise, and delivering
-      complex projects with measurable improvements in efficiency and accuracy.]
-    </p>
-    <p class="who">— [Name, Title] · via LinkedIn</p>
+    <p>"Sachin has consistently showcased strong technical skills and deep expertise in data engineering, significantly contributing to our team's success. He demonstrated his ability to navigate and deliver complex projects, with measurable improvements in efficiency and accuracy that positively impacted our clients' decision-making."</p>
+    <p class="who">Arthur du Passage<br><span class="role">Partner at Artefact · managed Sachin directly</span></p>
   </div>
 
   <div class="quote">
-    <p>
-      [Paste your full second LinkedIn recommendation here — the one from the
-      GST Malaysia project praising your development work, user support, and
-      reliability with commitments.]
-    </p>
-    <p class="who">— [Name, Title] · via LinkedIn</p>
+    <p>"I worked with Sachin on the GST implementation in Malaysia — he covered both development and user support. He quickly gathered an excellent reputation: competent, accommodating, kind and fast. He came up with ideas, raised flags on serious issues, kept his promises, and cross-checked immediately rather than risk taking the wrong path."</p>
+    <p class="who">Christian Schroeder<br><span class="role">VP Tax &amp; Risk Management, AUTO1 Group</span></p>
+  </div>
+
+  <div class="quote">
+    <p>"Sachin is an experienced and highly skilled developer — insightful and technical, able to resolve issues with minimal time. On the GST reporting tool for Petronas he supported us fully through development, testing and deployment. I would gladly work with him again."</p>
+    <p class="who">Carlson Joseph<br><span class="role">Finance Transformation Professional</span></p>
+  </div>
+</section>
+
+<section id="education" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> education</p>
+  <h2>Academic background</h2>
+  <div class="edu-row">
+    <div><div class="deg">M.Tech, Data Science &amp; Engineering</div><div class="school">Birla Institute of Technology and Science (BITS), Pilani</div></div>
+    <div class="yr">2023</div>
+  </div>
+  <div class="edu-row">
+    <div><div class="deg">MBA, Supply Chain Management</div><div class="school">Welingkar Institute of Management (WeSchool), Mumbai</div></div>
+    <div class="yr">2014</div>
+  </div>
+  <div class="edu-row">
+    <div><div class="deg">B.E., Computer Science</div><div class="school">University of Mumbai</div></div>
+    <div class="yr">2010</div>
+  </div>
+</section>
+
+<section id="about" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> beyond the terminal</p>
+  <h2>When the pipelines are green</h2>
+  <p class="sec-intro" style="margin-bottom:22px">
+    Endurance sports and debugging data pipelines need the same skill — staying calm when
+    you're only halfway there. Off the clock I'm on a badminton court, out on a long ride
+    or run, or falling down some new tech rabbit hole.
+  </p>
+  <div class="hobby-tags">
+    <span class="hobby">🏸 Badminton</span>
+    <span class="hobby">🚴 Cycling</span>
+    <span class="hobby">🏃 Running</span>
+    <span class="hobby">🤖 AI &amp; emerging tech</span>
+    <span class="hobby">🔧 Learning new hacks</span>
+    <span class="hobby">🌐 Internet rabbit holes</span>
   </div>
 </section>
 
 <section id="contact" class="wrap">
   <p class="sec-label"><span class="comment">--</span> contact</p>
   <h2>Get in touch</h2>
-  <p style="color:var(--ink-soft);max-width:560px">
-    Open to interesting data engineering problems, collaborations, and opportunities.
-    The fastest way to reach me is email or LinkedIn.
-  </p>
+  <p class="sec-intro">Open to senior data engineering and data platform roles, consulting, and interesting problems. Based in Singapore.</p>
   <div class="contact-row">
-    <a class="btn primary" href="mailto:sachsahu@example.com">Email me</a>
-    <a class="btn ghost" href="https://github.com/sachsahu21" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn primary" href="mailto:sahu.comp@gmail.com">sahu.comp@gmail.com</a>
     <a class="btn ghost" href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/sachsahu21" target="_blank" rel="noopener">GitHub</a>
     <a class="btn ghost" href="https://linktr.ee/sachsahu" target="_blank" rel="noopener">Linktree</a>
     <a class="btn ghost" href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Resume</a>
   </div>
@@ -408,5 +432,36 @@
   built by sachin sahu · hosted on github pages
 </footer>
 
+<script>
+(function(){
+  const c=document.getElementById('mesh');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w,h,pts=[];
+  function size(){w=c.width=c.offsetWidth*devicePixelRatio;h=c.height=c.offsetHeight*devicePixelRatio;}
+  function init(){
+    size();
+    const n=Math.min(46,Math.floor(w/38/devicePixelRatio));
+    pts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.18*devicePixelRatio,vy:(Math.random()-.5)*.18*devicePixelRatio}));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    const R=150*devicePixelRatio;
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i];
+      if(!reduced){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;}
+      for(let j=i+1;j<pts.length;j++){
+        const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.hypot(dx,dy);
+        if(d<R){ctx.strokeStyle=`rgba(20,184,182,${(1-d/R)*.28})`;ctx.lineWidth=devicePixelRatio*.6;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
+      }
+      ctx.fillStyle='rgba(20,184,182,.75)';ctx.beginPath();ctx.arc(p.x,p.y,1.4*devicePixelRatio,0,7);ctx.fill();
+    }
+    if(!reduced)requestAnimationFrame(draw);
+  }
+  addEventListener('resize',()=>{init();if(reduced)draw();});
+  init();draw();
+})();
+</script>
 </body>
 </html>
