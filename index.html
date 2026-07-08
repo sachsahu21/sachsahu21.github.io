@@ -107,8 +107,6 @@
   .cert-link{font-family:var(--mono);font-size:.78rem;display:inline-block;margin-top:12px}
 
   /* ---------- github ---------- */
-  .gh-stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
-  .gh-stats img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
   .repo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
   .repo-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column}
   .repo-card .repo-tag{font-family:var(--mono);font-size:.66rem;color:var(--amber);margin-bottom:7px;letter-spacing:.05em}
@@ -133,7 +131,18 @@
   .hobby{font-family:var(--mono);font-size:.82rem;color:var(--ink);background:var(--card);border:1px solid var(--line);padding:8px 15px;border-radius:99px}
 
   /* ---------- contact ---------- */
-  .contact-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .contact-form{max-width:520px;margin-top:22px;display:grid;gap:12px}
+  .contact-form label{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);margin-bottom:-6px}
+  .contact-form input,.contact-form textarea{font-family:var(--sans);font-size:.92rem;padding:11px 13px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);width:100%}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--teal)}
+  .contact-form textarea{resize:vertical;min-height:110px}
+  .contact-form button{font-family:var(--mono);font-size:.85rem;font-weight:500;padding:11px 22px;border-radius:6px;border:none;background:var(--teal-dark);color:#fff;cursor:pointer;justify-self:start}
+  .contact-form button:hover{background:var(--teal)}
+  .form-status{font-family:var(--mono);font-size:.8rem;min-height:1.2em}
+  .form-status.ok{color:var(--teal-dark)}
+  .form-status.err{color:#B4442E}
+  .contact-alt{margin-top:18px;font-size:.9rem;color:var(--ink-soft)}
+  .contact-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
   .btn.primary{background:var(--teal-dark);color:#fff;border:1.5px solid var(--teal-dark)}
   .btn.primary:hover{background:var(--teal);text-decoration:none}
   .btn.ghost{color:var(--teal-dark);border:1.5px solid var(--teal-dark)}
@@ -333,11 +342,6 @@
   <h2>Weekend builds</h2>
   <p class="sec-intro">Beyond the day job — small experiments I build for fun. Computer vision, messaging automation, and whatever catches my curiosity next.</p>
 
-  <div class="gh-stats">
-    <img src="https://github-readme-stats.vercel.app/api?username=sachsahu21&hide_border=false&include_all_commits=true" alt="Sachin's GitHub statistics" loading="lazy">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachsahu21&hide_border=false&include_all_commits=true&layout=compact" alt="Sachin's most-used programming languages" loading="lazy">
-  </div>
-
   <div class="repo-grid">
     <div class="repo-card">
       <p class="repo-tag">COMPUTER VISION</p>
@@ -418,10 +422,25 @@
 <section id="contact" class="wrap">
   <p class="sec-label"><span class="comment">--</span> contact</p>
   <h2>Get in touch</h2>
-  <p class="sec-intro">Open to senior data engineering and data platform roles, consulting, and interesting problems. Based in Singapore.</p>
+  <p class="sec-intro">Open to senior data engineering and data platform roles, consulting, and interesting problems. Based in Singapore. Drop me a message below, or reach me on LinkedIn.</p>
+
+  <form class="contact-form" id="contactForm">
+    <!-- Web3Forms access key — configured. Messages arrive in your inbox; your email never appears on the page. Manage at https://web3forms.com -->
+    <input type="hidden" name="access_key" value="c35c0900-f8ba-4f44-83b2-8ff9732e4106">
+    <input type="hidden" name="subject" value="New message from your portfolio site">
+    <label for="cf-name">Name</label>
+    <input id="cf-name" type="text" name="name" required autocomplete="name">
+    <label for="cf-email">Your email</label>
+    <input id="cf-email" type="email" name="email" required autocomplete="email">
+    <label for="cf-msg">Message</label>
+    <textarea id="cf-msg" name="message" required></textarea>
+    <button type="submit">Send message →</button>
+    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="contact-alt">Prefer to connect directly?</p>
   <div class="contact-row">
-    <a class="btn primary" href="mailto:sahu.comp@gmail.com">sahu.comp@gmail.com</a>
-    <a class="btn ghost" href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn primary" href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn ghost" href="https://github.com/sachsahu21" target="_blank" rel="noopener">GitHub</a>
     <a class="btn ghost" href="https://linktr.ee/sachsahu" target="_blank" rel="noopener">Linktree</a>
     <a class="btn ghost" href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Resume</a>
@@ -461,6 +480,43 @@
   }
   addEventListener('resize',()=>{init();if(reduced)draw();});
   init();draw();
+})();
+</script>
+<script>
+(function(){
+  const f=document.getElementById('contactForm');
+  if(!f)return;
+  const status=document.getElementById('formStatus');
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const key=f.querySelector('[name=access_key]').value;
+    if(key.includes('YOUR-WEB3FORMS')){
+      status.className='form-status err';
+      status.textContent='Form not configured yet — add your Web3Forms key.';
+      return;
+    }
+    status.className='form-status';
+    status.textContent='Sending…';
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json',Accept:'application/json'},
+        body:JSON.stringify(Object.fromEntries(new FormData(f)))
+      });
+      const data=await res.json();
+      if(data.success){
+        status.className='form-status ok';
+        status.textContent='Thanks — your message has been sent.';
+        f.reset();
+      }else{
+        status.className='form-status err';
+        status.textContent='Something went wrong. Please try LinkedIn instead.';
+      }
+    }catch(err){
+      status.className='form-status err';
+      status.textContent='Network error. Please try LinkedIn instead.';
+    }
+  });
 })();
 </script>
 </body>
