@@ -38,6 +38,9 @@
   .nav-links{display:flex;gap:18px;font-family:var(--mono);font-size:.8rem;flex-wrap:wrap}
   .nav-links a{color:#8FA6B5}
   .nav-links a:hover{color:var(--teal-bright);text-decoration:none}
+  .nav-mail{display:inline-flex;align-items:center;gap:6px;color:var(--teal-bright)!important;border:1px solid rgba(20,184,182,.4);padding:4px 11px;border-radius:99px}
+  .nav-mail:hover{background:rgba(20,184,182,.12)}
+  .nav-mail svg{display:block}
 
   /* ---------- dark AI hero ---------- */
   header{position:relative;background:radial-gradient(1200px 600px at 72% -10%, #0C1A28, #081018);color:#E8F0F4;overflow:hidden;padding:76px 0 56px}
@@ -165,10 +168,13 @@
     <div class="nav-links">
       <a href="#experience">experience</a>
       <a href="#expertise">stack</a>
-      <a href="#projects">projects</a>
-      <a href="#certifications">certs</a>
+      <a href="#projects">hands-on</a>
       <a href="#contact">contact</a>
       <a href="https://github.com/sachsahu21" target="_blank" rel="noopener">github ↗</a>
+      <a href="mailto:sahu.comp@gmail.com" class="nav-mail" aria-label="Email Sachin" title="Email me">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+        <span>email</span>
+      </a>
     </div>
   </div>
 </nav>
@@ -177,13 +183,15 @@
   <canvas id="mesh" aria-hidden="true"></canvas>
   <div class="wrap hero-inner">
     <span class="status"><span class="dot"></span> Data Engineering Manager · Ministry of Health, Singapore</span>
-    <h1>I build the data foundations<br>behind <span class="accent">AI and analytics</span> at national scale.</h1>
+    <h1>I lead data engineering<br>behind <span class="accent">AI and analytics</span> at national scale.</h1>
     <p class="lede">
-      <strong>Sachin Sahu</strong> — Certified Data Architect with <strong>14+ years</strong> across
-      Google Cloud, Azure, and Alibaba Cloud. Today I lead data engineering for
-      <strong>national healthcare initiatives</strong> — precision medicine, genomic data, OMOP —
-      at Singapore's Ministry of Health. Before that: L'Oréal's global marketing data platform at
-      Artefact, and anti-fraud &amp; finance data products at <strong>Lazada (Alibaba Group)</strong>.
+      <strong>Sachin Sahu</strong> — Data Engineering Manager and Certified Data Architect with
+      <strong>14+ years</strong> across Google Cloud, Azure, and Alibaba Cloud. Today I lead data
+      engineering for <strong>national healthcare initiatives</strong> — precision medicine, genomic
+      data, OMOP — at Singapore's Ministry of Health, mentoring engineers and owning delivery
+      end to end. Previously: L'Oréal's global marketing platform at Artefact, and anti-fraud
+      &amp; finance data products at <strong>Lazada (Alibaba Group)</strong>, working directly with
+      CFO- and CRO-level stakeholders.
     </p>
     <div class="hero-cta">
       <a class="btn primary" href="https://github.com/sachsahu21" target="_blank" rel="noopener">View my GitHub →</a>
@@ -193,9 +201,9 @@
 
     <div class="stats">
       <div class="stat"><div class="num">14+</div><div class="lbl">years in data</div></div>
-      <div class="stat"><div class="num">4</div><div class="lbl">clouds certified</div></div>
-      <div class="stat"><div class="num">700+</div><div class="lbl">users on Apollo dashboard</div></div>
-      <div class="stat"><div class="num">1&nbsp;TB+</div><div class="lbl">data per pipeline run</div></div>
+      <div class="stat"><div class="num">700+</div><div class="lbl">users across 15 markets</div></div>
+      <div class="stat"><div class="num">National</div><div class="lbl">healthcare data programs</div></div>
+      <div class="stat"><div class="num">C-level</div><div class="lbl">CFO / CRO stakeholders</div></div>
       <div class="stat"><div class="num">50%</div><div class="lbl">faster data ingestion</div></div>
     </div>
   </div>
@@ -216,6 +224,7 @@
       <li>Contributed to national initiatives — <strong>precision medicine, genomic data integration, OMOP mapping</strong> — across multiple government agencies</li>
       <li>Built a scalable API proof-of-concept for cross-agency healthcare data integration (OMOP)</li>
       <li>Centralized task management cut duplication <strong>50%</strong>; Confluence + data catalog cut onboarding time <strong>40%</strong></li>
+      <li><strong>Mentored and developed engineers</strong>, guiding team members toward career progression and succession</li>
     </ul>
   </div>
 
@@ -300,59 +309,22 @@
   </div>
 </section>
 
-<section id="certifications" class="wrap">
-  <p class="sec-label"><span class="comment">--</span> certifications</p>
-  <div class="cert-head">
-    <h2>Certified across 4 clouds</h2>
-    <span class="verified-pill">✓ GCP · Azure · Alibaba · AWS</span>
-  </div>
-  <div class="cert-grid">
-    <div class="cert-card flagship">
-      <span class="flag-badge">FLAGSHIP</span>
-      <p class="cert-provider">GOOGLE CLOUD</p>
-      <h3>Professional Cloud Architect</h3>
-      <p>Design of secure, scalable, highly available GCP solutions</p>
-      <a class="cert-link" href="https://www.credly.com/users/sachinsahu/badges" target="_blank" rel="noopener">Verify on Credly ↗</a>
-    </div>
-    <div class="cert-card">
-      <p class="cert-provider">ALIBABA CLOUD</p>
-      <h3>4× Certified</h3>
-      <p>Big Data · Computing · Cloud Security · Cloud Native</p>
-    </div>
-    <div class="cert-card">
-      <p class="cert-provider">MICROSOFT AZURE</p>
-      <h3>3× Fundamentals</h3>
-      <p>Azure · Azure Data · Azure AI Fundamentals</p>
-    </div>
-    <div class="cert-card">
-      <p class="cert-provider">TREASURE DATA</p>
-      <h3>CDP Certified</h3>
-      <p>Customer Data Platform specialist</p>
-    </div>
-    <div class="cert-card">
-      <p class="cert-provider">AWS · GOOGLE</p>
-      <h3>Big Data &amp; Marketing</h3>
-      <p>AWS Big Data · BigQuery ML · Google Marketing Platform</p>
-    </div>
-  </div>
-</section>
-
 <section id="projects" class="wrap">
-  <p class="sec-label"><span class="comment">--</span> projects</p>
-  <h2>Weekend builds</h2>
-  <p class="sec-intro">Beyond the day job — small experiments I build for fun. Computer vision, messaging automation, and whatever catches my curiosity next.</p>
+  <p class="sec-label"><span class="comment">--</span> hands-on</p>
+  <h2>Still building, for fun</h2>
+  <p class="sec-intro">Leadership doesn't mean stepping away from the craft. I still spot everyday data problems and build tools to solve them — here's what I've been tinkering with.</p>
 
   <div class="repo-grid">
     <div class="repo-card">
       <p class="repo-tag">COMPUTER VISION</p>
       <p class="repo-name">face-scan</p>
-      <p>Face detection &amp; recognition experiment. <em>[Add one line: what it does + what you explored.]</em></p>
+      <p>Scans your face from a mobile web browser and pulls every photo of you out of cloud storage — so anyone sitting on 1&nbsp;TB of photos can instantly find their own.</p>
       <a class="cert-link" href="https://github.com/sachsahu21/face-scan" target="_blank" rel="noopener">View repo ↗</a>
     </div>
     <div class="repo-card">
-      <p class="repo-tag">IMAGE PROCESSING</p>
+      <p class="repo-tag">IMAGE ORGANISER</p>
       <p class="repo-name">photo</p>
-      <p>Photo tooling project. <em>[Add one line: what it does.]</em></p>
+      <p>Auto-organises a photo library by year and month, flags duplicates to reclaim disk space, and adds text notes so the memories stay easy to relive.</p>
       <a class="cert-link" href="https://github.com/sachsahu21/photo" target="_blank" rel="noopener">View repo ↗</a>
     </div>
     <div class="repo-card">
@@ -385,6 +357,29 @@
 </section>
 
 <section id="education" class="wrap">
+  <p class="sec-label"><span class="comment">--</span> certifications</p>
+  <h2>Certifications</h2>
+  <p class="sec-intro">Google Professional Cloud Architect anchors a cross-cloud certification base.</p>
+  <div class="cert-grid" style="margin-bottom:34px">
+    <div class="cert-card flagship">
+      <span class="flag-badge">FLAGSHIP</span>
+      <p class="cert-provider">GOOGLE CLOUD</p>
+      <h3>Professional Cloud Architect</h3>
+      <p>Design of secure, scalable, highly available GCP solutions</p>
+      <a class="cert-link" href="https://www.credly.com/users/sachinsahu/badges" target="_blank" rel="noopener">Verify on Credly ↗</a>
+    </div>
+    <div class="cert-card">
+      <p class="cert-provider">ALSO CERTIFIED</p>
+      <h3>Alibaba Cloud 4× · TreasureData CDP</h3>
+      <p>Big Data, Computing, Cloud Security, Cloud Native · Customer Data Platform</p>
+    </div>
+    <div class="cert-card">
+      <p class="cert-provider">FOUNDATIONS</p>
+      <h3>Azure &amp; AWS</h3>
+      <p>Azure / Data / AI Fundamentals · AWS Big Data · BigQuery ML · Google Marketing</p>
+    </div>
+  </div>
+
   <p class="sec-label"><span class="comment">--</span> education</p>
   <h2>Academic background</h2>
   <div class="edu-row">
@@ -438,9 +433,11 @@
     <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
   </form>
 
-  <p class="contact-alt">Prefer to connect directly?</p>
+  <p class="contact-alt">Prefer to reach me directly?</p>
   <div class="contact-row">
-    <a class="btn primary" href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn primary" href="mailto:sahu.comp@gmail.com">✉ Email me</a>
+    <a class="btn primary" href="https://wa.me/6581317616" target="_blank" rel="noopener" style="background:#1DA762;border-color:#1DA762">WhatsApp</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn ghost" href="https://github.com/sachsahu21" target="_blank" rel="noopener">GitHub</a>
     <a class="btn ghost" href="https://linktr.ee/sachsahu" target="_blank" rel="noopener">Linktree</a>
     <a class="btn ghost" href="https://drive.google.com/file/d/13cOCTQOiEnE5YpsPpB2OLKEkM80wHHe7/view" target="_blank" rel="noopener">Resume</a>
