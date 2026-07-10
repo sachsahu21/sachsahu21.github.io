@@ -34,12 +34,14 @@
   nav{position:sticky;top:0;background:rgba(8,16,24,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(143,166,181,.25);z-index:20}
   .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:13px 24px;max-width:960px;margin:0 auto}
   .logo{font-family:var(--sans);font-weight:600;font-size:1rem;color:#E8F0F4;letter-spacing:-.01em}
-  .nav-links{display:flex;gap:18px;font-family:var(--mono);font-size:.8rem;flex-wrap:wrap}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .nav-links{display:flex;gap:18px;font-family:var(--mono);font-size:.8rem}
   .nav-links a{color:#8FA6B5}
   .nav-links a:hover{color:var(--teal-bright);text-decoration:none}
-  .nav-mail{display:inline-flex;align-items:center;gap:6px;color:var(--teal-bright)!important;border:1px solid rgba(20,184,182,.4);padding:4px 11px;border-radius:99px}
-  .nav-mail:hover{background:rgba(20,184,182,.12)}
-  .nav-mail svg{display:block}
+  .nav-icons{display:flex;align-items:center;gap:14px}
+  .nav-icons a{color:#8FA6B5;display:inline-flex}
+  .nav-icons a:hover{color:var(--teal-bright)}
+  .nav-icons svg{display:block}
 
   /* ---------- dark AI hero ---------- */
   header{position:relative;background:radial-gradient(1200px 600px at 72% -10%, #0C1A28, #081018);color:#E8F0F4;overflow:hidden;padding:76px 0 56px}
@@ -155,7 +157,9 @@
   @media (max-width:640px){
     header{padding:52px 0 40px}
     section{padding:42px 0}
-    .nav-links{gap:12px;font-size:.72rem}
+    .nav-links{display:none}
+    .nav-icons{gap:16px}
+    .nav-icons svg{width:19px;height:19px}
   }
 </style>
 </head>
@@ -164,16 +168,27 @@
 <nav>
   <div class="nav-inner">
     <div class="logo">Sachin Sahu</div>
-    <div class="nav-links">
-      <a href="#experience">experience</a>
-      <a href="#expertise">stack</a>
-      <a href="#projects">hands-on</a>
-      <a href="#contact">contact</a>
-      <a href="https://github.com/sachsahu21" target="_blank" rel="noopener">github ↗</a>
-      <a href="mailto:sahu.comp@gmail.com" class="nav-mail" aria-label="Email Sachin" title="Email me">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-        <span>email</span>
-      </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#experience">experience</a>
+        <a href="#expertise">stack</a>
+        <a href="#projects">hands-on</a>
+        <a href="#contact">contact</a>
+      </div>
+      <div class="nav-icons">
+        <a href="mailto:sahu.comp@gmail.com" aria-label="Email Sachin" title="Email">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+        </a>
+        <a href="https://wa.me/6581317616" target="_blank" rel="noopener" aria-label="WhatsApp Sachin" title="WhatsApp">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sachinsahu1/" target="_blank" rel="noopener" aria-label="Sachin on LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="https://github.com/sachsahu21" target="_blank" rel="noopener" aria-label="Sachin on GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58l-.02-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </nav>
