@@ -33,7 +33,9 @@
   /* ---------- nav ---------- */
   nav{position:sticky;top:0;background:rgba(8,16,24,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(143,166,181,.25);z-index:20}
   .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:13px 24px;max-width:960px;margin:0 auto}
-  .logo{font-family:var(--sans);font-weight:600;font-size:1rem;color:#E8F0F4;letter-spacing:-.01em}
+  .logo{font-family:var(--sans);font-weight:600;font-size:1rem;color:#E8F0F4;letter-spacing:-.01em;display:inline-flex;align-items:baseline;gap:12px}
+  .logo-sub{font-family:var(--mono);font-weight:400;font-size:.72rem;color:#8FA6B5;letter-spacing:.02em;position:relative;padding-left:12px}
+  .logo-sub::before{content:'|';position:absolute;left:0;color:#546A78}
   .nav-right{display:flex;align-items:center;gap:22px}
   .nav-links{display:flex;gap:18px;font-family:var(--mono);font-size:.8rem}
   .nav-links a{color:#8FA6B5}
@@ -158,6 +160,7 @@
     header{padding:52px 0 40px}
     section{padding:42px 0}
     .nav-links{display:none}
+    .logo-sub{display:none}
     .nav-icons{gap:16px}
     .nav-icons svg{width:19px;height:19px}
   }
@@ -167,7 +170,7 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="logo">Sachin Sahu</div>
+    <div class="logo">Sachin Sahu<span class="logo-sub">Data &amp; AI · Multi-Cloud</span></div>
     <div class="nav-right">
       <div class="nav-links">
         <a href="#experience">experience</a>
